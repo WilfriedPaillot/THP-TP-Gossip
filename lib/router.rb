@@ -12,8 +12,9 @@ class Router
       puts "Que veux-tu faire?"
       puts "1 --> Créer un gossip"
       puts "2 --> Afficher les gossips"
-      puts "3 --> Affiche le nombre de rows dans le CSV"
-      puts "4 --> Quitter l'app"
+      puts "3 --> Afficher le nombre de gossips"
+      puts "4 --> Supprimer un gossip"
+      puts "0 --> Quitter l'app"
       print "> "
       params = gets.chomp.to_i
 
@@ -28,6 +29,9 @@ class Router
           puts "Voici le nombre d'entrées dans le CSV"
           @controller.count_all
         when 4
+          puts "Supprimer un gossip IDentifié"
+          @controller.delete_by_id
+        when 0
           puts "Ciao bellao! "
           break
         else
@@ -35,7 +39,5 @@ class Router
       end
     end
   end
-
-
-
+  
 end
